@@ -52,7 +52,7 @@ export default {
       try {
         const {
           data: { token },
-        } = await axios.post('http://localhost:3000/api/users/login', {
+        } = await axios.post('/api/users/login', {
           username,
           password,
         });

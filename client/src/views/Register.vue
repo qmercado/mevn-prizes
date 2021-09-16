@@ -45,7 +45,7 @@ export default {
         alert("Username and password are required");
       }
       try {
-        await axios.post('http://localhost:3000/api/users/register', {
+        await axios.post('/api/users/register', {
           username,
           password,
         });

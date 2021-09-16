@@ -114,7 +114,7 @@ export default {
         this.zeroStockModal = new Modal(this.$refs.zeroStock)
 
         const id = this.$route.params.id
-        const response = await axios.get('http://localhost:3000/api/prizeItems/' + id)
+        const response = await axios.get('/api/prizeItems/' + id)
         this.item = response.data
         this.stock = response.data.quantity;
     },
@@ -136,7 +136,7 @@ export default {
         async reducePrizeStock() {
             this.stock--
             const id = this.$route.params.id
-            await axios.put(`http://localhost:3000/api/prizeItems/${id}`, {"quantity": this.stock} )
+            await axios.put(`/api/prizeItems/${id}`, {"quantity": this.stock} )
         }
     }
 }
