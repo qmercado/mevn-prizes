@@ -3,14 +3,14 @@
     <h1>Register</h1>
     <form @submit.prevent="register">
       <div class="row mb-3">
-        <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+        <label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
         <div class="col-sm-4">
           <input v-model="form.username" type="text" class="form-control" id="inputUsername" />
         </div>
       </div>
 
       <div class="row mb-3">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
         <div class="col-sm-4">
           <input v-model="form.password" type="password" class="form-control" id="inputPassword">
         </div>
@@ -18,7 +18,7 @@
 
       <div class="row mb-3">
         <label class="col-sm-2 col-form-label">&nbsp;</label>
-        <div class="col-sm-4">
+        <div class="row col-mb-4">
           <input class="btn btn-success" type="submit" value="Register" />
           &nbsp;
           <button class="btn btn-primary" type="button" @click="$router.push('/')">Login</button>
@@ -45,7 +45,7 @@ export default {
         alert("Username and password are required");
       }
       try {
-        await axios.post('/api/users/register', {
+        await axios.post('api/users/register', {
           username,
           password,
         });

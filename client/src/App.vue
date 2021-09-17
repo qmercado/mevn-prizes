@@ -28,7 +28,6 @@ export default {
 <style>
 body {
   margin: 0;
-  padding: 0 10%;
   background-color:#fff !important;
 }
 
@@ -42,4 +41,11 @@ body {
   font-weight: bold;
   margin-bottom: 0;
 }
+
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 0 10%;
+  }
+}
+
 </style>

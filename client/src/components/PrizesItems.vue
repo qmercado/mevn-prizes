@@ -36,7 +36,7 @@ export default {
     }
   },
   async mounted() {
-    const response = await axios.get('/api/prizeItems');
+    const response = await axios.get('api/prizeItems');
     this.items = response.data;
   }
 }
@@ -77,5 +77,15 @@ export default {
 
 .redeem {
   background-color: #FFCF0B;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards-wrapper {
+    padding: 0 1em 2em;
+  }
+
+  .btn {
+    max-width: none;
+  }
 }
 </style>
