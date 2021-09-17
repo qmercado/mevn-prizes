@@ -114,7 +114,7 @@ export default {
         this.zeroStockModal = new Modal(this.$refs.zeroStock)
 
         const id = this.$route.params.id
-        const response = await axios.get('/api/prizeItems/' + id)
+        const response = await axios.get('api/prizeItems/' + id)
         this.item = response.data
         this.stock = response.data.quantity;
     },
@@ -136,7 +136,7 @@ export default {
         async reducePrizeStock() {
             this.stock--
             const id = this.$route.params.id
-            await axios.put(`/api/prizeItems/${id}`, {"quantity": this.stock} )
+            await axios.put(`api/prizeItems/${id}`, {"quantity": this.stock} )
         }
     }
 }
@@ -184,4 +184,20 @@ export default {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+@media only screen and (max-width: 768px) {
+    .item-wrapper {
+        padding: 1em 1em;
+    }
+
+    .h-devider {
+        margin: 0;
+        border: 0;
+    }
+
+    .card-body {
+        line-height: 80px;
+    }
+}
+
 </style>

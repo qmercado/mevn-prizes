@@ -1,4 +1,10 @@
 <template>
+<!--
+  @todos:
+    - Update hard-coded name base on the logged in user
+    - Display these links when user is logged in only
+    - Update the UI cosmetics of this header
+-->
   <div class="d-flex justify-content-between">
     <div class="logo" @click="$router.push('/home')">
       <link-router to="/">Home</link-router>

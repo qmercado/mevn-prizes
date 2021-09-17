@@ -6,14 +6,14 @@
 
     <form @submit.prevent="login">
       <div class="row mb-3">
-        <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+        <label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
         <div class="col-sm-4">
           <input v-model="form.username" type="text" class="form-control" id="inputUsername" />
         </div>
       </div>
 
       <div class="row mb-3">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
         <div class="col-sm-4">
           <input v-model="form.password" type="password" class="form-control" id="inputPassword">
         </div>
@@ -21,7 +21,7 @@
 
       <div class="row mb-3">
         <label class="col-sm-2 col-form-label">&nbsp;</label>
-        <div class="col-sm-4">
+        <div class="row col-mb-4">
           <button class="btn btn-primary" type="submit">Login</button>
           &nbsp;
           <button class="btn btn-success" type="button" @click="$router.push('/register')">
@@ -52,7 +52,7 @@ export default {
       try {
         const {
           data: { token },
-        } = await axios.post('/api/users/login', {
+        } = await axios.post('api/users/login', {
           username,
           password,
         });
